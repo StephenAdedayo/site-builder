@@ -19,7 +19,7 @@ const App = () => {
 
   const {pathname} = useLocation()
 
-  const hideNavbar = pathname.startsWith("/projects/") && pathname !== "/projects" || pathname.startsWith("/view/") || pathname.startsWith("/preview/")
+  const hideNavbar = pathname.startsWith("/projects/") && pathname !== "/projects" || pathname.startsWith("/view/") || pathname.startsWith("/preview/") || pathname.startsWith("/auth/")
 
   return (
     <div>
