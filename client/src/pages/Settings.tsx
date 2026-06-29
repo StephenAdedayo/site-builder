@@ -1,8 +1,6 @@
 import { DangerZone } from '@/components/auth/delete-user/danger-zone'
-import { DeleteAccount } from '@/components/auth/delete-user/delete-account'
 import { AccountSettings } from '@/components/auth/settings/account/account-settings'
 import { ChangePassword } from '@/components/auth/settings/security/change-password'
-import React from 'react'
 
 const Settings = () => {
   return (

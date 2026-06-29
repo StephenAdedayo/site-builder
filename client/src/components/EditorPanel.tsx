@@ -7,11 +7,11 @@ interface EditorPanelProps {
         className : string,
         text : string,
         styles: {
-            padding : string,
-            margin : string,
-            backgroundColor : string,
-            color : string,
-            fontSize : string
+            padding? : string,
+            margin? : string,
+            backgroundColor? : string,
+            color? : string,
+            fontSize? : string
         } | null
     }
 
@@ -35,7 +35,7 @@ const EditorPanel = ({selectedElement, onUpdate, onClose} : EditorPanelProps) =>
     const handleChange = (field : string, value:string) => {
         const newValues = {...values, [field] : value}
 
-        if(field in values.styles){
+        if(values.styles && field in values.styles){
             newValues.styles = {...values.styles, [field]: value}
         }
 
@@ -53,7 +53,7 @@ const EditorPanel = ({selectedElement, onUpdate, onClose} : EditorPanelProps) =>
     }
 
   return (
-    <div className='absolute top-4 right-4 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 z-50 animate-fade-in fade-in '>
+    <div className='absolute  top-4 right-4 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 z-50 animate-fade-in fade-in '>
 
         <div className='flex justify-between items-center mb-4 '>
             <h3 className='font-semibold text-gray-800'>Edit Element</h3>

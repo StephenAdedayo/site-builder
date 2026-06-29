@@ -11,7 +11,6 @@ interface SidebarProps {
     setProject : (project : Project) => void,
     isGenerating : boolean
     setIsGenerating : (isGenerating : boolean) => void
-
 }
 
 const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating} : SidebarProps) => {
@@ -92,7 +91,7 @@ const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating
 
         <div className='flex flex-col h-full'>
             {/* message container */}
-            <div className={`overflow-y-auto h-[700px]  no-scrollbar px-3 flex flex-col gap-4`}>
+            <div className={`overflow-y-scroll flex-1 no-scrollbar px-3 flex flex-col gap-4`}>
                 {[...project.conversation, ...project.versions].sort((a,b)=> new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()).map((message) => {
                     const isMessage = 'content' in message
                     if(isMessage){
@@ -101,7 +100,7 @@ const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating
                         return (
                         <div key={msg.id} className={`flex items-start gap-3 ${isUser ? "justify-end" : "justify-start"}`}>
                             {!isUser && (
-                                <div className='w-8 h-8 rounded-full bg-linear-to-br from-indigo-600 to-indigo-700 flex items-center justify-center '>
+                                <div className='w-8 h-8 rounded-full bg-linear-to-br from-indigo-600 to-indigo-700 flex items-center justify-center'>
                                     <BotIcon className='size-5 text-white'/>
                                 </div>
                             )}
