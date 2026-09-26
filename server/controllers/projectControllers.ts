@@ -209,7 +209,7 @@ export const rollBackToVerion = async (req:Request, res:Response) => {
 
         if(!project) return res.status(404).json({success: false, message : "Project not found"})
 
-        const version = project.versions.find(version => version.id === versionId)
+        const version = project.versions.find((version:{id:string}) => version.id === versionId as string)
 
         if(!version) return res.status(404).json({success: false, message : "Version not found"})
 
