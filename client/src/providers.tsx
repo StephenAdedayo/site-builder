@@ -1,6 +1,6 @@
 // src/components/providers.tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { Link, NavLink, useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import type { ReactNode } from "react"
 import { authClient } from "@/lib/auth-client"
 import { AuthProvider } from "@/components/auth/auth-provider"
