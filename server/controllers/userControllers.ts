@@ -87,7 +87,7 @@ export const createUserProject = async (req:Request, res:Response) => {
         // enhance user prompts
 
         const prompEnhanceResponse = await openai.chat.completions.create({
-             model: "z-ai/glm-4.5-air:free",
+       model:process.env.MODEL || "inclusionai/ling-3.0-flash-fin:free",
     messages: [
       {
         "role": "system",
@@ -132,7 +132,7 @@ Return ONLY the enhanced prompt, nothing else. Make it detailed but concise (2-3
 
         // generate website code
         const codeGenerationResponse = await openai.chat.completions.create({
-       model: "z-ai/glm-4.5-air:free",
+       model:process.env.MODEL || "inclusionai/ling-3.0-flash-fin:free",
        messages : [
     {
         "role" : "system",

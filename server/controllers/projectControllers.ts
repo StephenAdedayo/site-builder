@@ -53,7 +53,7 @@ export const makeRevisions = async (req: Request, res: Response) => {
 
         // enhance prompt
         const promptEnhancedResponse = await openai.chat.completions.create({
-            model: "z-ai/glm-4.5-air:free",
+       model:process.env.MODEL || "inclusionai/ling-3.0-flash-fin:free",
             messages: [
                 {
                     "role": "system",
@@ -95,7 +95,7 @@ Return ONLY the enhanced request, nothing else. Keep it concise (1-2 sentences).
         })
 
         const codeGenerationResponse = await openai.chat.completions.create({
-            model: "z-ai/glm-4.5-air:free",
+       model:process.env.MODEL || "inclusionai/ling-3.0-flash-fin:free",
             messages: [
                 {
                     "role": "system",
